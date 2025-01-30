@@ -41,11 +41,28 @@ const btn_tit = document.querySelector(".header__btn--change");
 
 btn_tit.addEventListener("Click", function(){
     cambiar();
+    this.classlist.toggle("header__btn--click")
 
 });
 
+btn_tit.toggle("header__btn--click");
 
 
-// Ej2 Tienes la página web modelo que debe cambiar el color del titular del negro actual a rojo y además debe quedar centrado. El único cambio será en el bloque cambiar y el código de función cambiar()
-//El bloque cambiar acepta el click, el color del titular cambia a rojo y queda centrado
+//EJ3 Como crear nuevos elementos y objetos dentro de mi html
+const btn_blq= document.querySelector(".header__btn--create");
+function crearDiv(){
+    const new_ele= document.createElement("div");// Crear un nuevo elemento
+    new_ele.textContent= "Javascript permite crear paginas dinamicas";//Añadimos contenido
+    new_ele.classList.add("texto");// Añadimos el estilo
+
+    const padre= document.querySelector("main");
+    padre.appendChild(new_ele);
+
+    // Posicionamos nnuestro elemento detras de nuestra etiqueta titulo
+    const titulo = document.querySelector("h1");// elemento de referencia
+    titulo.parentNode.insertBefore(new_ele, titulo.nextSibling)
+}
+
+
+
 
